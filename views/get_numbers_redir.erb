@@ -1,0 +1,6 @@
+<%= @title %>
+<form action="numbers" method="post">
+	<input type="text" name="user[numbers]">
+	<input type="hidden" name="user[name]" value=<%= @user_name %>>
+	<input type="hidden" name="user[location]" value=<%= @user_location%>>
+</form>

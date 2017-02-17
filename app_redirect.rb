@@ -13,7 +13,7 @@ end
 post "/name" do 
 
 	session[:user_name] = params[:name]
-	redirect ("/location?name=" + session[:user_name])
+	redirect "/location"
 end
 
 get "/location" do
@@ -25,7 +25,7 @@ end
 post "/location" do
 
 	session[:user_location] = params[:location]
-	redirect ("/numbers?name=#{session[:user_name]}location=" + session[:user_location])
+	redirect "/numbers"
 end
 
 get "/numbers" do
@@ -37,7 +37,7 @@ end
 post "/numbers" do
 
 	session[:user_numbers] = params[:numbers]
-	redirect "/age?name=#{session[:user_name]}location=#{session[:user_location]}numbers=" + session[:user_numbers]
+	redirect "/age"
 end
 
 get "/age" do
@@ -49,7 +49,7 @@ end
 post "/age" do
 
 	session[:user_age] = params[:age]
-	redirect "/final?name=#{session[:user_name]}location=#{session[:user_location]}numbers=#{session[:user_numbers]}age=" + session[:user_age]
+	redirect "/final"
 end
 
 get "/final" do
